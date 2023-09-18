@@ -20,6 +20,17 @@ const serviceImages = document.querySelectorAll('.service-image');
 const serviceDescriptions = document.querySelectorAll('.service-description');
 const serviceButtons = document.querySelectorAll('.btn-service')
 const serviceCardSliders = document.querySelectorAll('.card-slider .card');
+const navItems = document.querySelectorAll('.nav-item');
+
+//nav items
+navItems.forEach(item =>
+  item.addEventListener('click', (e) => {
+    window.scroll({
+      top: document.querySelector(`.${item.dataset.target}`).getBoundingClientRect().top + window.scrollY,
+      behavior: 'smooth'
+    })
+  })
+)
 
 // global values
 let colleagueIndex = 0;

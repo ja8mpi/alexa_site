@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
@@ -35,13 +34,24 @@ body {
     width: 100%;
 }
 
-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 40px 40px 20px 40px;
+section {
+    padding-top: 1rem;
 }
+
+/*navbar*/
+
+nav {
+    display: none;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+.nav-item {
+    cursor: pointer;
+}
+
 
 /* Képek */
 
@@ -514,12 +524,12 @@ header {
 
 /* contacts */
 
-.contacts {
+.contacts-card {
     display: flex;
     flex-direction: column;
 }
 
-.contacts h3 {
+.contacts-card h3 {
     max-width: 90%;
     text-align: center;
     color: var(--clr-brown-700);
@@ -628,6 +638,30 @@ footer p {
 
 /*dekstop overrides*/
 @media screen and (min-width: 800px) {
+
+    /* nav*/
+    nav {
+        display: unset;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+        padding: 40px 40px 20px 40px;
+    }
+
+    .nav-item {
+        color: var(--clr-brown-700);
+        font-family: 'Raleway', sans-serif;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
     .colleague-card {
         padding-bottom: 5rem;
         padding-left: 1rem;
@@ -799,7 +833,7 @@ footer p {
 
     /* contacts */
 
-    .contacts {
+    .contacts-card {
         display: grid;
         grid-template-columns: 1fr 10px 1fr;
         column-gap: 5rem;
