@@ -6,6 +6,31 @@ const rightsReserved = document.querySelector(".rights-reserved");
 const bookButtons = document.querySelectorAll(".btn-book");
 const contactsContainer = document.querySelector(".contacts");
 
+/* Colleague elements*/
+const colleagueArrowLeft = document.querySelector(".colleague-arrow.arrow-left")
+const colleagueArrowRight = document.querySelector(".colleague-arrow.arrow-right")
+const colleagueImages = document.querySelectorAll('.colleague-profile')
+const colleagueDetails = document.querySelectorAll('.colleague-details')
+const colleagueTexts = document.querySelectorAll('.colleague-text')
+
+//service elements
+const serviceArrowLeft = document.querySelector(".service-arrow.arrow-left")
+const serviceArrowRight = document.querySelector(".service-arrow.arrow-right")
+const serviceImages = document.querySelectorAll('.service-image');
+const serviceDescriptions = document.querySelectorAll('.service-description');
+const serviceButtons = document.querySelectorAll('.btn-service')
+const serviceCardSliders = document.querySelectorAll('.card-slider .card');
+
+// global values
+let colleagueIndex = 0;
+let serviceIndex = 0;
+let timer = undefined;
+
+
+const isElementInViewport = (el) => el.getBoundingClientRect().right > 0;
+rightsReserved.innerText = `© ${new Date().getFullYear()}`;
+
+
 bookButtons.forEach(b => {
   b.addEventListener("click", () => {
     window.scroll({
@@ -15,9 +40,7 @@ bookButtons.forEach(b => {
   })
 })
 
-rightsReserved.innerText = `© ${new Date().getFullYear()}`;
 
-let timer = undefined;
 
 const scrollLeft = () => {
   const first = document.querySelector(".card-slider .card");
@@ -56,25 +79,6 @@ cardSlider.addEventListener("mouseleave", () => {
 })
 
 
-
-const isElementInViewport = (el) => el.getBoundingClientRect().right > 0;
-
-window.addEventListener("mousemove", (e) => {
-  let direction = "", oldx = 0;
-  const mousemovemethod = (e) => {
-    // if (e.pageX < oldx) {
-    //   direction = "left"
-    // } else if (e.pageX > oldx) {
-    //   direction = "right"
-    // }
-    // oldx = e.pageX;
-    // console.log(direction)
-
-  }
-  mousemovemethod();
-});
-
-
 // doesn't take into account southern hemisphere
 
 class Season {
@@ -102,56 +106,48 @@ const updateSeason = () => {
 
 updateSeason();
 
-
-/* Colleague code*/
-const colleagueArrowLeft = document.querySelector(".colleague-arrow.arrow-left")
-const colleagueArrowRight = document.querySelector(".colleague-arrow.arrow-right")
-
-const colleagueImages = document.querySelectorAll('.colleague-profile')
-const colleagueDetails = document.querySelectorAll('.colleague-details')
-const colleagueTexts = document.querySelectorAll('.colleague-text')
-let colleagueIndex = 0;
+/* */
+const toggleServiceRight = (e) => {
+  changeAndToggle([serviceImages, serviceDescriptions, serviceButtons], serviceIndex, (val) => {
+    if (serviceIndex >= serviceImages.length - 1) {
+      val.index = 0
+      serviceIndex = 0;
+    } else {
+      val.index++
+      serviceIndex++
+    }
+  })
+}
 
 colleagueArrowLeft.addEventListener('click', (e) => {
-  colleagueImages[colleagueIndex].classList.remove('show');
-  colleagueDetails[colleagueIndex].classList.remove('show');
-  colleagueTexts[colleagueIndex].classList.remove('show');
-  if (colleagueIndex == 0) {
-    colleagueIndex = colleagueImages.length - 1;
-  } else {
-    colleagueIndex--;
-  }
-  colleagueImages[colleagueIndex].classList.add('show');
-  colleagueDetails[colleagueIndex].classList.add('show');
-  colleagueTexts[colleagueIndex].classList.add('show');
+  changeAndToggle([colleagueImages, colleagueDetails, colleagueTexts], colleagueIndex, (val) => {
+    if (colleagueIndex == 0) {
+      colleagueIndex = colleagueImages.length - 1;
+      val.index = colleagueImages.length - 1;
+    } else {
+      colleagueIndex--;
+      val.index--;
+    }
+  })
 });
 
 
 colleagueArrowRight.addEventListener('click', (e) => {
-  colleagueImages[colleagueIndex].classList.remove('show');
-  colleagueDetails[colleagueIndex].classList.remove('show');
-  colleagueTexts[colleagueIndex].classList.remove('show');
 
-  if (colleagueIndex >= colleagueImages.length - 1) {
-    colleagueIndex = 0;
-  } else {
-    colleagueIndex++;
-  }
-  colleagueImages[colleagueIndex].classList.add('show');
-  colleagueDetails[colleagueIndex].classList.add('show');
-  colleagueTexts[colleagueIndex].classList.add('show');
+  changeAndToggle([colleagueImages, colleagueDetails, colleagueTexts], colleagueIndex, (val) => {
+    if (colleagueIndex >= colleagueImages.length - 1) {
+      colleagueIndex = 0;
+      val.index = 0;
+    } else {
+      colleagueIndex++;
+      val.index++;
+    }
+  })
+
 });
 
 /* services code */
-const serviceArrowLeft = document.querySelector(".service-arrow.arrow-left")
-const serviceArrowRight = document.querySelector(".service-arrow.arrow-right")
-const serviceImages = document.querySelectorAll('.service-image');
-const serviceDescriptions = document.querySelectorAll('.service-description');
-const serviceButtons = document.querySelectorAll('.btn-service')
-const serviceCardSliders = document.querySelectorAll('.card-slider .card');
 
-let serviceIndex = 0;
-//
 
 const changeAndToggle = (arr, i, fn) => {
   let val = { index: i }
@@ -173,18 +169,9 @@ const toggleServiceLeft = (e) => {
   })
 }
 
-const toggleServiceRight = (e) => {
-  changeAndToggle([serviceImages, serviceDescriptions, serviceButtons], serviceIndex, (val) => {
-    if (serviceIndex >= serviceImages.length - 1) {
-      val.index = 0
-      serviceIndex = 0;
-    } else {
-      val.index++
-      serviceIndex++
-    }
-  })
-}
 
+serviceArrowLeft.addEventListener('click', toggleServiceLeft)
+serviceArrowRight.addEventListener('click', toggleServiceRight)
 serviceCardSliders.forEach(slider => {
   slider.addEventListener('click', (e) => {
     window.scroll({
@@ -199,8 +186,6 @@ serviceCardSliders.forEach(slider => {
 });
 
 
-serviceArrowLeft.addEventListener('click', toggleServiceLeft)
-serviceArrowRight.addEventListener('click', toggleServiceRight)
 
 serviceButtons.forEach(button => {
   button.addEventListener('click', e => {
