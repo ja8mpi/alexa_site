@@ -22,6 +22,21 @@ const serviceButtons = document.querySelectorAll('.btn-service')
 const serviceCardSliders = document.querySelectorAll('.card-slider .card');
 const navItems = document.querySelectorAll('.nav-item');
 
+const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+dropdownItems.forEach(item => {
+  item.addEventListener('click', (e) => {
+    window.scroll({
+      top: document.querySelector('.services').getBoundingClientRect().top + window.scrollY,
+      behavior: 'smooth'
+    })
+    changeAndToggle([serviceImages, serviceDescriptions, serviceButtons], serviceIndex, (val) => {
+      serviceIndex = Number(item.dataset.indexNumber);
+      val.index = Number(item.dataset.indexNumber);
+    })
+  });
+})
+
 //nav items
 navItems.forEach(item =>
   item.addEventListener('click', (e) => {
