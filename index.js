@@ -102,6 +102,7 @@ const updateSeason = () => {
 
 updateSeason();
 
+
 /* Colleague code*/
 const colleagueArrowLeft = document.querySelector(".colleague-arrow.arrow-left")
 const colleagueArrowRight = document.querySelector(".colleague-arrow.arrow-right")
@@ -150,33 +151,38 @@ const serviceButtons = document.querySelectorAll('.btn-service')
 const serviceCardSliders = document.querySelectorAll('.card-slider .card');
 
 let serviceIndex = 0;
+//
+
+const changeAndToggle = (arr, i, fn) => {
+  let val = { index: i }
+  arr.forEach(a => a[val.index].classList.remove('show'));
+  fn(val);
+  arr.forEach(a => a[val.index].classList.add('show'));
+}
+
 
 const toggleServiceLeft = (e) => {
-  serviceImages[serviceIndex].classList.remove('show');
-  serviceDescriptions[serviceIndex].classList.remove('show');
-  serviceButtons[serviceIndex].classList.remove('active');
-  if (serviceIndex == 0) {
-    serviceIndex = serviceImages.length - 1;
-  } else {
-    serviceIndex--;
-  }
-  serviceImages[serviceIndex].classList.add('show');
-  serviceDescriptions[serviceIndex].classList.add('show');
-  serviceButtons[serviceIndex].classList.add('active');
+  changeAndToggle([serviceImages, serviceDescriptions, serviceButtons], serviceIndex, (val) => {
+    if (serviceIndex == 0) {
+      val.index = serviceImages.length - 1
+      serviceIndex = serviceImages.length - 1
+    } else {
+      val.index -= 1
+      serviceIndex -= 1
+    }
+  })
 }
 
 const toggleServiceRight = (e) => {
-  serviceImages[serviceIndex].classList.remove('show');
-  serviceDescriptions[serviceIndex].classList.remove('show');
-  serviceButtons[serviceIndex].classList.remove('active');
-  if (serviceIndex >= serviceImages.length - 1) {
-    serviceIndex = 0;
-  } else {
-    serviceIndex++;
-  }
-  serviceImages[serviceIndex].classList.add('show');
-  serviceDescriptions[serviceIndex].classList.add('show');
-  serviceButtons[serviceIndex].classList.add('active');
+  changeAndToggle([serviceImages, serviceDescriptions, serviceButtons], serviceIndex, (val) => {
+    if (serviceIndex >= serviceImages.length - 1) {
+      val.index = 0
+      serviceIndex = 0;
+    } else {
+      val.index++
+      serviceIndex++
+    }
+  })
 }
 
 serviceCardSliders.forEach(slider => {
@@ -185,30 +191,22 @@ serviceCardSliders.forEach(slider => {
       top: document.querySelector('.services').getBoundingClientRect().top + window.scrollY,
       behavior: 'smooth'
     })
-    serviceImages[serviceIndex].classList.remove('show');
-    serviceDescriptions[serviceIndex].classList.remove('show');
-    serviceButtons[serviceIndex].classList.remove('active');
-
-    serviceIndex = Number(slider.dataset.indexNumber);
-
-    serviceImages[serviceIndex].classList.add('show');
-    serviceDescriptions[serviceIndex].classList.add('show');
-    serviceButtons[serviceIndex].classList.add('active');
+    changeAndToggle([serviceImages, serviceDescriptions, serviceButtons], serviceIndex, (val) => {
+      serviceIndex = Number(slider.dataset.indexNumber);
+      val.index = Number(slider.dataset.indexNumber);
+    })
   });
 });
+
+
 serviceArrowLeft.addEventListener('click', toggleServiceLeft)
 serviceArrowRight.addEventListener('click', toggleServiceRight)
 
 serviceButtons.forEach(button => {
   button.addEventListener('click', e => {
-    serviceImages[serviceIndex].classList.remove('show');
-    serviceDescriptions[serviceIndex].classList.remove('show');
-    serviceButtons[serviceIndex].classList.remove('active');
-
-    serviceIndex = Number(button.dataset.indexNumber);
-
-    serviceImages[serviceIndex].classList.add('show');
-    serviceDescriptions[serviceIndex].classList.add('show');
-    serviceButtons[serviceIndex].classList.add('active');
+    changeAndToggle([serviceImages, serviceDescriptions, serviceButtons], serviceIndex, (val) => {
+      serviceIndex = Number(button.dataset.indexNumber);
+      val.index = Number(button.dataset.indexNumber);
+    })
   });
 })

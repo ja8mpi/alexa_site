@@ -706,7 +706,7 @@ footer p {
     }
 
     .btn-service:hover,
-    .btn-service.active {
+    .btn-service.show {
         font-weight: 600;
     }
 
@@ -717,7 +717,7 @@ footer p {
     }
 
     .btn-service:hover:after,
-    .btn-service.active:after {
+    .btn-service.show:after {
         content: '';
         position: absolute;
         width: 100%;
