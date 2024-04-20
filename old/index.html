@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="skinist skin specialist Owner: Alexandra Temesi">
+    <title>Skinist - Your Skin Specialist</title>
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <img src="./img/menu.svg" class="menu-icon" alt="menu">
+                <li class="nav-item" data-target="colleagues">RÓLUNK</li>
+                <li class="nav-item dropdown" data-target="services">SZOLGÁLTATÁSOK
+                    <div class="dropdown-content">
+                        <p class="dropdown-item" data-index-number="0">ARCKEZELÉSEK</p>
+                        <p class="dropdown-item" data-index-number="1">ELEKTROKOZMETIKA</p>
+                        <p class="dropdown-item" data-index-number="2">SZEMPILLA ÉS SZEMÖLDÖK STYLING</p>
+                        <p class="dropdown-item" data-index-number="3">SZŐRTELENÍTÉS</p>
+                    </div>
+                </li>
+                <img src="./img/logo.svg" alt="skinist_logo">
+                <li class="nav-item" data-target="contacts">KAPCSOLAT</li>
+                <li class="nav-item" data-target="prices">ÁRAINK</li>
+                <img src="./img/search.svg" alt="search">
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="news-container">
+            <div class="fadein">
+                <img src="img\pilla.jpg" id="fade-1" alt="fokepernyo">
+                <img src="img\fokepernyo.png" id="fade-2" alt="fokepernyo">
+                <img src="img\arckezeles.png" id="fade-3" alt="fokepernyo">
+                <button class="btn btn-fadein btn-book">IDŐPONTFOGLALÁS</button>
+            </div>
+            <div class="news">
+                <fieldset class="news-header">
+                    <legend>
+                        <img class="news-image" src="./img/new.svg" alt="new">
+                    </legend>
+                    <span>
+                        <span class="news-season">
+                            TAVASZI
+                        </span>
+                        ÚJDONSÁGOK
+                    </span>
+                </fieldset>
+                <p class="news-text">
+                    Látogass el szalonunkba és fedezd fel a felfrissülés érzését!
+                </p>
+                <button class="btn btn-news btn-book">IDŐPONTFOGLALÁS</button>
+            </div>
+        </section>
+        <section class="services-slider">
+            <h2 class="subtitle">SZOLGÁLTATÁSAINK</h2>
+            <!-- <card-slider></card-slider> -->
+            <div class="card-slider">
+                <div class="card" data-index-number="0">
+                    <img draggable="false" src="./img/arckezeles.png" alt="arckezeles">
+                    <button>ARCKEZELÉSEK</button>
+                </div>
+                <div class="card" data-index-number="1">
+                    <img draggable="false" src="./img/elektro.jpg" alt="elektrokezelesek">
+                    <button>ELEKTROKOZMETIKA</button>
+                </div>
+                <div class="card" data-index-number="2">
+                    <img draggable="false" src="./img/pilla.jpg" alt="szempilla styling">
+                    <button>SZEMPILLASTYLING</button>
+                </div>
+                <div class="card" data-index-number="3">
+                    <img draggable="false" src="./img/szemoldok.png" alt="szemoldok styling">
+                    <button>SZŐRTELENÍTÉS</button>
+                </div>
+                <div class="card" data-index-number="0">
+                    <img draggable="false" src="./img/arckezeles.png" alt="arckezeles">
+                    <button>ARCKEZELÉSEK</button>
+                </div>
+                <div class="card" data-index-number="1">
+                    <img draggable="false" src="./img/elektro.jpg" alt="elektrokezelesek">
+                    <button>ELEKTROKOZMETIKA</button>
+                </div>
+                <div class="card" data-index-number="2">
+                    <img draggable="false" src="./img/pilla.jpg" alt="szempilla styling">
+                    <button>SZEMPILLASTYLING</button>
+                </div>
+                <div class="card" data-index-number="3">
+                    <img draggable="false" src="./img/szemoldok.png" alt="szemoldok styling">
+                    <button>SZŐRTELENÍTÉS</button>
+                </div>
+        </section>
+        <section class="colleagues">
+            <h2 class="subtitle">MUNKATÁRSAINK</h2>
+            <div class="colleagues-container">
+                <div class="colleague-card">
+                    <fieldset class="colleague-details show">
+                        <legend class="colleague-name">
+                            Temesi Alexandra
+                        </legend>
+                        <span class="colleague-title">
+                            KOZMETIKUS
+                        </span>
+                    </fieldset>
+                    <fieldset class="colleague-details">
+                        <legend class="colleague-name">
+                            Kolléga#1
+                        </legend>
+                        <span class="colleague-title">
+                            KOZMETIKUS
+                        </span>
+                    </fieldset>
+                    <fieldset class="colleague-details">
+                        <legend class="colleague-name">
+                            Kolléga#2
+                        </legend>
+                        <span class="colleague-title">
+                            KOZMETIKUS
+                        </span>
+                    </fieldset>
+                    <i class="fa-solid fa-angle-left colleague-arrow arrow-left"></i>
+
+                    <img class="colleague-profile show" src=" ./img/profil.png" alt="profile">
+                    <img class="colleague-profile" src=" ./img/hamlasztas.png" alt="profile">
+                    <img class="colleague-profile" src=" ./img/szempilla.png" alt="profile">
+
+                    <i class="fa-solid fa-angle-right colleague-arrow arrow-right"></i>
+
+                    <div class="colleague-text show">
+                        <p class="description">
+                            Imádok kozmetikusként dolgozni, mert gyönyörködtet a változatosság, amellyel nap, mint nap
+                            találkozom. Nincs két
+                            egyforma arc, és nincs két ugyanolyan szépség! Ajándék, hogy munkámmal hozzájárulhatok
+                            ahhoz,
+                            hogy mégis mindegyik
+                            teljes fényében ragyogjon.
+                            A legjobb nem elég, nekem a tökéletes kell, ahogy vendégként neked is. 10 év szakmai
+                            tapasztalatom alapján választottam
+                            ki azokat a termékcsaládokat, elektrokozmetikai gépeket, fejlesztettem ki különböző
+                            speciális
+                            eljárásokat, melyekkel
+                            eredményesen tudjuk kezelni azokat a kozmetikai igényeket, amelyekkel hozzám érkezel. Az
+                            eredményesség érdekében
+                            rendkívül fontosnak tartom a tudatos hozzáállást. Elengedhetetlen, hogy ne csak a külső, de
+                            a
+                            belső okokat is
+                            megfigyeljük!
+                        </p>
+                        <p class="highlight">
+                            A Skinist Szépségszalonban számunkra a maximum nem opció, kötelesség!
+                        </p>
+                    </div>
+                    <div class="colleague-text">
+                        <p class="description">
+                            Imádok kozmetikusként dolgozni, mert gyönyörködtet a változatosság, amellyel nap, mint nap
+                            találkozom. Nincs két
+                            egyforma arc, és nincs két ugyanolyan szépség! Ajándék, hogy munkámmal hozzájárulhatok
+                            ahhoz,
+                            hogy mégis mindegyik
+                            teljes fényében ragyogjon.
+                            A legjobb nem elég, nekem a tökéletes kell, ahogy vendégként neked is. 10 év szakmai
+                            tapasztalatom alapján választottam
+                            ki azokat a termékcsaládokat, elektrokozmetikai gépeket, fejlesztettem ki különböző
+                            speciális
+                            eljárásokat, melyekkel
+                            eredményesen tudjuk kezelni azokat a kozmetikai igényeket, amelyekkel hozzám érkezel. Az
+                            eredményesség érdekében
+                            rendkívül fontosnak tartom a tudatos hozzáállást. Elengedhetetlen, hogy ne csak a külső, de
+                            a
+                            belső okokat is
+                            megfigyeljük!
+                        </p>
+                        <p class="highlight">
+                            A Skinist Szépségszalonban számunkra a maximum nem opció, kötelesség!
+                        </p>
+                    </div>
+                    <div class="colleague-text">
+                        <p class="description">
+                            Imádok kozmetikusként dolgozni, mert gyönyörködtet a változatosság, amellyel nap, mint nap
+                            találkozom. Nincs két
+                            egyforma arc, és nincs két ugyanolyan szépség! Ajándék, hogy munkámmal hozzájárulhatok
+                            ahhoz,
+                            hogy mégis mindegyik
+                            teljes fényében ragyogjon.
+                            A legjobb nem elég, nekem a tökéletes kell, ahogy vendégként neked is. 10 év szakmai
+                            tapasztalatom alapján választottam
+                            ki azokat a termékcsaládokat, elektrokozmetikai gépeket, fejlesztettem ki különböző
+                            speciális
+                            eljárásokat, melyekkel
+                            eredményesen tudjuk kezelni azokat a kozmetikai igényeket, amelyekkel hozzám érkezel. Az
+                            eredményesség érdekében
+                            rendkívül fontosnak tartom a tudatos hozzáállást. Elengedhetetlen, hogy ne csak a külső, de
+                            a
+                            belső okokat is
+                            megfigyeljük!
+                        </p>
+                        <p class="highlight">
+                            A Skinist Szépségszalonban számunkra a maximum nem opció, kötelesség!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="services">
+            <p class="subtitle">SZOLGÁLTATÁSOK</p>
+            <div class="services-menu">
+                <button class="service btn-service show" data-index-number="0">ARCKEZELÉSEK</button>
+                <button class="service btn-service" data-index-number="1">ELEKTROKOZMETIKA</button>
+                <button class="service btn-service" data-index-number="2">SZEMPILLA ÉS SZEMÖLDÖK STYLING</button>
+                <button class="service btn-service" data-index-number="3">SZŐRTELENÍTÉS</button>
+            </div>
+            <div class="service-card">
+                <img src="./img/hamlasztas.png" alt="hamlasztas" class="service-image show">
+                <img src="./img/elektrokozmetika.jpg" alt="elektrokozmetika" class="service-image">
+                <img src="./img/szemoldok.png" alt="szemoldok" class="service-image">
+                <img src="./img/elektro.jpg" alt="elektro" class="service-image">
+                <!-- <img src="./img/hamlasztas.png" alt="" class="service-image"> -->
+                <div class="service-description show">
+                    <h3>I PEEL SAVAS HÁMLASZTÁS</h3>
+                    <p>Minden nap, óráról órára bőrsejtek ezrei halnak el, hogy helyet adjanak az újaknak. Ha nem
+                        fordítasz kellő gondot a
+                        rendszeres arctisztításra és hámlasztásra, ezek az elhalt hámsejtek eltömítik a pórusokat és a
+                        faggyúmirigyek
+                        kivezetéseit, ezzel pedig elzárják a bőr egészséges puhaságát és hidratáltságát is biztosító
+                        faggyú útját. Hámlasztás
+                        nélkül pigmentfoltok, bőrhibák, mitesszerek, pattanások és aknék alakulhatnak ki, illetve
+                        felgyorsulnak a bőröregedés
+                        természetes folyamatai.
+                    </p>
+                    <p>
+                        A hámlasztás az a bőrnek, ami a levegő a testnek. Nem élhet nélküle!
+                    </p>
+                    <ul class="service-benefits">
+                        <li>-Fokozott vérkeringés
+                        </li>
+                        <li>
+                            -Javuló hatóanyag-felszívódás
+                        </li>
+                        <li>
+                            -Egységesebb bőrkép
+                        </li>
+                        <li>
+                            -Látványos és tartós hatá
+                        </li>
+                    </ul>
+                    <p>
+                        I PEEL The Signature Facelift - rosacea
+                        ellen, száraz, vízhiányos bőrre
+                    </p>
+                    <p>
+                        I PEEL Wrinkle Lift - glikolsavas, retinolos kezelés feszesítő,
+                        revitalizáló és
+                        meggyorsítja a sejt megújulást
+                    </p>
+                    <p>
+                        I PEEL Acne Lift Peel - I PEEL Lightening Lift Peel -
+                    </p>
+                    <button class="btn book-service btn-book">
+                        IDŐPONTFOGLALÁS
+                    </button>
+                </div>
+                <div class="service-description">
+                    <h3>ELEKTROKOZMETIKA</h3>
+                    <p>Minden nap, óráról órára bőrsejtek ezrei halnak el, hogy helyet adjanak az újaknak. Ha nem
+                        fordítasz kellő gondot a
+                        rendszeres arctisztításra és hámlasztásra, ezek az elhalt hámsejtek eltömítik a pórusokat és a
+                        faggyúmirigyek
+                        kivezetéseit, ezzel pedig elzárják a bőr egészséges puhaságát és hidratáltságát is biztosító
+                        faggyú útját. Hámlasztás
+                        nélkül pigmentfoltok, bőrhibák, mitesszerek, pattanások és aknék alakulhatnak ki, illetve
+                        felgyorsulnak a bőröregedés
+                        természetes folyamatai.
+                    </p>
+                    <p>
+                        A hámlasztás az a bőrnek, ami a levegő a testnek. Nem élhet nélküle!
+                    </p>
+                    <ul class="service-benefits">
+                        <li>-Fokozott vérkeringés
+                        </li>
+                        <li>
+                            -Javuló hatóanyag-felszívódás
+                        </li>
+                        <li>
+                            -Egységesebb bőrkép
+                        </li>
+                        <li>
+                            -Látványos és tartós hatá
+                        </li>
+                    </ul>
+                    <p>
+                        I PEEL The Signature Facelift - rosacea
+                        ellen, száraz, vízhiányos bőrre
+                    </p>
+                    <p>
+                        I PEEL Wrinkle Lift - glikolsavas, retinolos kezelés feszesítő,
+                        revitalizáló és
+                        meggyorsítja a sejt megújulást
+                    </p>
+                    <p>
+                        I PEEL Acne Lift Peel - I PEEL Lightening Lift Peel -
+                    </p>
+                    <button class="btn book-service btn-book">
+                        IDŐPONTFOGLALÁS
+                    </button>
+                </div>
+
+                <div class="service-description">
+                    <h3>SZEMPILLA ÉS SZEMÖLDÖK STYLING</h3>
+                    <p>Minden nap, óráról órára bőrsejtek ezrei halnak el, hogy helyet adjanak az újaknak. Ha nem
+                        fordítasz kellő gondot a
+                        rendszeres arctisztításra és hámlasztásra, ezek az elhalt hámsejtek eltömítik a pórusokat és a
+                        faggyúmirigyek
+                        kivezetéseit, ezzel pedig elzárják a bőr egészséges puhaságát és hidratáltságát is biztosító
+                        faggyú útját. Hámlasztás
+                        nélkül pigmentfoltok, bőrhibák, mitesszerek, pattanások és aknék alakulhatnak ki, illetve
+                        felgyorsulnak a bőröregedés
+                        természetes folyamatai.
+                    </p>
+                    <p>
+                        A hámlasztás az a bőrnek, ami a levegő a testnek. Nem élhet nélküle!
+                    </p>
+                    <ul class="service-benefits">
+                        <li>-Fokozott vérkeringés
+                        </li>
+                        <li>
+                            -Javuló hatóanyag-felszívódás
+                        </li>
+                        <li>
+                            -Egységesebb bőrkép
+                        </li>
+                        <li>
+                            -Látványos és tartós hatá
+                        </li>
+                    </ul>
+                    <p>
+                        I PEEL The Signature Facelift - rosacea
+                        ellen, száraz, vízhiányos bőrre
+                    </p>
+                    <p>
+                        I PEEL Wrinkle Lift - glikolsavas, retinolos kezelés feszesítő,
+                        revitalizáló és
+                        meggyorsítja a sejt megújulást
+                    </p>
+                    <p>
+                        I PEEL Acne Lift Peel - I PEEL Lightening Lift Peel -
+                    </p>
+                    <button class="btn book-service btn-book">
+                        IDŐPONTFOGLALÁS
+                    </button>
+                </div>
+                <div class="service-description">
+                    <h3>SZŐRTELENÍTÉS</h3>
+                    <p>Minden nap, óráról órára bőrsejtek ezrei halnak el, hogy helyet adjanak az újaknak. Ha nem
+                        fordítasz kellő gondot a
+                        rendszeres arctisztításra és hámlasztásra, ezek az elhalt hámsejtek eltömítik a pórusokat és a
+                        faggyúmirigyek
+                        kivezetéseit, ezzel pedig elzárják a bőr egészséges puhaságát és hidratáltságát is biztosító
+                        faggyú útját. Hámlasztás
+                        nélkül pigmentfoltok, bőrhibák, mitesszerek, pattanások és aknék alakulhatnak ki, illetve
+                        felgyorsulnak a bőröregedés
+                        természetes folyamatai.
+                    </p>
+                    <p>
+                        A hámlasztás az a bőrnek, ami a levegő a testnek. Nem élhet nélküle!
+                    </p>
+                    <ul class="service-benefits">
+                        <li>-Fokozott vérkeringés
+                        </li>
+                        <li>
+                            -Javuló hatóanyag-felszívódás
+                        </li>
+                        <li>
+                            -Egységesebb bőrkép
+                        </li>
+                        <li>
+                            -Látványos és tartós hatá
+                        </li>
+                    </ul>
+                    <p>
+                        I PEEL The Signature Facelift - rosacea
+                        ellen, száraz, vízhiányos bőrre
+                    </p>
+                    <p>
+                        I PEEL Wrinkle Lift - glikolsavas, retinolos kezelés feszesítő,
+                        revitalizáló és
+                        meggyorsítja a sejt megújulást
+                    </p>
+                    <p>
+                        I PEEL Acne Lift Peel - I PEEL Lightening Lift Peel -
+                    </p>
+                    <button class="btn book-service btn-book">
+                        IDŐPONTFOGLALÁS
+                    </button>
+                </div>
+                <i class="fa-solid fa-angle-left service-arrow arrow-left"></i>
+                <i class="fa-solid fa-angle-right service-arrow arrow-right"></i>
+            </div>
+        </section>
+        <section class="prices">
+            <h2 class="subtitle dark">ÁRAINK</h2>
+            <div class="menu prices-menu">
+                <button class="menu price btn-price">ARCKEZELÉSEK</button>
+                <button class="menu price btn-price">ELEKTROKOZMETIKA</button>
+                <button class="menu price btn-price">SZEMPILLA ÉS SZEMÖLDÖK STYLING</button>
+                <button class="menu price btn-price">SZŐRTELENÍTÉS</button>
+            </div>
+            <div class="prices-card">
+                <div class="price-item">
+                    <div class="title">Hydroabrázió</div>
+                    <div class="subtitle">vizes bőrcsiszolás</div>
+                    <div class="price">3.300 Ft</div>
+                </div>
+                <div class="price-item">
+                    <div class="title">Mikrodermabrázió</div>
+                    <div class="subtitle">Kristályáramos bőrcsiszolás</div>
+                    <div class="price">12.300 Ft</div>
+                </div>
+                <div class="price-item">
+                    <div class="title">Hydroabrázió</div>
+                    <div class="subtitle">vizes bőrcsiszolás</div>
+                    <div class="price">3.300 Ft</div>
+                </div>
+                <div class="price-item">
+                    <div class="title">Mikrodermabrázió</div>
+                    <div class="subtitle">Kristályáramos bőrcsiszolás</div>
+                    <div class="price">12.300 Ft</div>
+                </div>
+                <div class="price-item">
+                    <div class="title">Hydroabrázió</div>
+                    <div class="subtitle">vizes bőrcsiszolás</div>
+                    <div class="price">3.300 Ft</div>
+                </div>
+                <div class="price-item">
+                    <div class="title">Mikrodermabrázió</div>
+                    <div class="subtitle">Kristályáramos bőrcsiszolás</div>
+                    <div class="price">12.300 Ft</div>
+                </div>
+            </div>
+        </section>
+        <div class="slider design-slider"></div>
+        <section class="contacts">
+            <h2 class="subtitle">
+                KAPCSOLAT
+            </h2>
+            <div class="contacts-card">
+                <div class="appointment-form">
+                    <h3>LÉPJ VELÜNK KAPCSOLATBA</h3>
+                    <div>
+                        <form action="">
+                            <input type="text" name="name" id="name" placeholder="NÉV">
+                            <input type="email" name="email" id="email" placeholder="EMAILCÍM">
+                            <input type="tel" name="tel" id="tel" placeholder="TELEFONSZÁM">
+                            <textarea name="msg" id="msg" cols="30" rows="10" placeholder="ÜZENET"></textarea>
+                        </form>
+                        <button class="btn">KÜLDÉS</button>
+                    </div>
+                </div>
+                <div class="separator"></div>
+                <div class="contacts-info">
+                    <h3>ELÉRHETŐSÉGÜNK</h3>
+                    <p class="contact-info">
+                        1034 Budapest Szőlő utca 9-11
+                    </p>
+                    <p class="contact-info">
+                        kapucsengő 108 #
+                    </p>
+                    <p class="contact-info">
+                        temesi.alexandra@gmail.com
+                    </p>
+                    <a href="tel:+36 30 421 0117" class="contact-info">
+                        +36-30-421-0117
+                    </a>
+                    <h3>
+                        NYITVATARTÁS BEJELENTKEZÉS ALAPJÁN
+                    </h3>
+                    <div class="gmap_canvas"><iframe
+                            src="https://maps.google.com/maps?q=scinist&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                            frameborder="0" scrolling="yes"></iframe>
+                    </div>
+
+                </div>
+            </div>
+            <div class="socials">
+                <a href="https://www.facebook.com/skinistcosmetic/" class="social-link" target=”_blank”>
+                    <img src="./img/facebook-logo.svg" alt="">
+                </a>
+                <a href="" class="social-link" target=”_blank”>
+                    <img src="./img/messenger-logo.svg" alt="">
+                </a>
+                <a href="https://www.instagram.com/skinistcosmetic/" class="social-link" target=”_blank”>
+                    <img src="./img/instagram-logo.svg" alt="">
+                </a>
+            </div>
+        </section>
+    </main>
+    <div id="map"></div>
+    <footer>
+        <p>SZERZŐI JOG - TEMESI ALEXANDRA</p>
+        <p class="rights-reserved"></p>
+    </footer>
+</body>
+
+</html>
