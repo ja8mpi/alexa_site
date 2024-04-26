@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Neccesary due to the slider*/
+#root {
+  overflow-x: hidden;
+  position: relative;
+  min-width: 100vw;
+  min-height: 100vh;
+}
