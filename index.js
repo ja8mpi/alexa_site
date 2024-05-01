@@ -173,17 +173,7 @@ const updateSeason = () => {
 updateSeason();
 
 /* */
-const toggleServiceRight = (e) => {
-  changeAndToggle([serviceImages, serviceDescriptions, serviceButtons], serviceIndex, (val) => {
-    if (serviceIndex >= serviceImages.length - 1) {
-      val.index = 0
-      serviceIndex = 0;
-    } else {
-      val.index++
-      serviceIndex++
-    }
-  })
-}
+
 
 colleagueArrowLeft.addEventListener('click', (e) => {
   changeAndToggle([colleagueImages, colleagueDetails, colleagueTexts], colleagueIndex, (val) => {
@@ -221,10 +211,20 @@ const changeAndToggle = (arr, i, fn) => {
   fn(val);
   arr.forEach(a => a[val.index].classList.add('show'));
 }
-
+const toggleServiceRight = (e) => {
+  changeAndToggle([serviceImages, serviceDescriptions, serviceButtons,priceButtons, priceCards], serviceIndex, (val) => {
+    if (serviceIndex >= serviceImages.length - 1) {
+      val.index = 0
+      serviceIndex = 0;
+    } else {
+      val.index++
+      serviceIndex++
+    }
+  })
+}
 
 const toggleServiceLeft = (e) => {
-  changeAndToggle([serviceImages, serviceDescriptions, serviceButtons], serviceIndex, (val) => {
+  changeAndToggle([serviceImages, serviceDescriptions, serviceButtons,priceButtons, priceCards], serviceIndex, (val) => {
     if (serviceIndex == 0) {
       val.index = serviceImages.length - 1
       serviceIndex = serviceImages.length - 1
