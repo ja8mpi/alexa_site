@@ -47,10 +47,13 @@ header{
     left: 0;
     z-index: 10; 
     opacity: 90%;
+    background-color: var(--clr-white);
+    opacity: 90%;
+    padding: 1rem;
 }
 
 main{
-    margin-top: 150px;
+    margin-top: 100px;
     min-height: 100vh;
 }
 
@@ -63,22 +66,88 @@ section {
 /*navbar*/
 
 nav {
-    display: none;
+    display: flex;
+    align-items: space-between;;
+    justify-content: space-between;
+    /* flex-flow: column-reverse; */
+    flex-direction: column;
 }
 
-nav ul {
+.nav-toggle{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.menu-icon{
+    width: 15%;
+}
+
+.logo_mobile{
+    width: 25%;
+}
+
+.nav-list {
+    display: none;
     list-style-type: none;
+}
+
+.nav-list.show{
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: flex-end;
+}
+
+.nav-item{
+    padding: 0.5rem 0rem;
+}
+
+.nav-list .logo{
+    display: none;
 }
 
 .nav-item {
     cursor: pointer;
 }
 
-.logo{
+
+
+.logo, .menu-icon{
     /* USE THIS PROJECT TO CHANGE THE COLOR: https://codepen.io/sosuke/pen/Pjoqqp */
     filter: invert(28%) sepia(55%) saturate(365%) hue-rotate(121deg) brightness(99%) contrast(88%);
 }
 
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+    /* display: inline-block; */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: var(--clr-green);
+    min-width: 50%;
+}
+
+.dropdown-content p {
+    color: var(--clr-yellow);
+    margin: 0;
+    padding: 1em;
+}
+
+.dropdown-content p:hover, .dropdown-content p:active {
+    background-color: var(--clr-yellow);
+    color: var(--clr-green);
+}
+
+.dropdown-content.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
 
 /* Képek */
 
@@ -730,6 +799,13 @@ footer p {
 /*desktop overrides*/
 @media screen and (min-width: 800px) {
 
+    main{
+        margin-top: 150px;
+    }
+    .logo_mobile{
+        display: none;
+    }
+    
     .dropdown {
         position: relative;
         display: inline-block;
@@ -749,22 +825,13 @@ footer p {
         padding: 1em;
     }
 
-    .dropdown-content p:hover {
-        background-color: var(--clr-yellow);
-        color: var(--clr-green);
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
     /* nav*/
     nav {
         display: block;
         background-color: var(--clr-white);
     }
 
-    nav ul {
+    .nav-list {
         display: flex;
         justify-content: space-between;
         align-items: center;
