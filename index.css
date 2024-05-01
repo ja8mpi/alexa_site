@@ -24,19 +24,20 @@
     --gray-line: #d9d9d9;
     --clr-green: #2E6058;
     --clr-green-light: #31635B;
+    --clr-green-lighter: #468b80;
     --clr-yellow: #D7CA98;
 }
 
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
-    width: 100%;
     color: var(--clr-gray);
 }
 
-body {
-    margin: 0;
+html, body{
+    margin: 0px;
+    padding: 0px;
     width: 100%;
+    overflow-x: hidden;
 }
 
 header{
@@ -317,9 +318,11 @@ nav ul {
     background-color: var(--clr-yellow);
     color: var(--clr-white);
     font-weight: bold;
-    font-size: large;
+    max-width: 80%;
+    font-size: 1rem;
     padding: 10px 20px;
     border-radius: 10px;
+    white-space: break-spaces;
 }
 
 /* Additional styles for button and other elements */
