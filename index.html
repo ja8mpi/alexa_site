@@ -9,7 +9,6 @@
     <title>Skinist - Your Skin Specialist</title>
     <script src="./index.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./index.css">
 </head>
@@ -31,7 +30,8 @@
                 <img src="./img/logo.svg" alt="skinist_logo">
                 <li class="nav-item" data-target="contacts">KAPCSOLAT</li>
                 <li class="nav-item" data-target="prices">ÁRAINK</li>
-                <img src="./img/search.svg" alt="search">
+                <li class="nav-item" data-target="contact-info">IDŐPONTFOGLALÁS</li>
+                <!-- <img src="./img/search.svg" alt="search"> -->
             </ul>
         </nav>
     </header>
@@ -79,7 +79,7 @@
                 </div>
                 <div class="card" data-index-number="3">
                     <img draggable="false" src="./img/szemoldok.png" alt="szemoldok styling">
-                    <button>SZŐRTELENÍTÉS</button>
+                    <button>VÉGLEGES SZŐRTELENÍTÉS</button>
                 </div>
                 <div class="card" data-index-number="0">
                     <img draggable="false" src="./img/arckezeles.png" alt="arckezeles">
@@ -112,15 +112,7 @@
                     </fieldset>
                     <fieldset class="colleague-details">
                         <legend class="colleague-name">
-                            Kolléga#1
-                        </legend>
-                        <span class="colleague-title">
-                            KOZMETIKUS
-                        </span>
-                    </fieldset>
-                    <fieldset class="colleague-details">
-                        <legend class="colleague-name">
-                            Kolléga#2
+                            Izsóf Szilvia
                         </legend>
                         <span class="colleague-title">
                             KOZMETIKUS
@@ -128,37 +120,12 @@
                     </fieldset>
                     <i class="fa-solid fa-angle-left colleague-arrow arrow-left"></i>
 
-                    <img class="colleague-profile show" src=" ./img/profil.png" alt="profile">
-                    <img class="colleague-profile" src=" ./img/hamlasztas.png" alt="profile">
-                    <img class="colleague-profile" src=" ./img/szempilla.png" alt="profile">
+                    <img class="colleague-profile show" src=" ./img/alexa_profil.jpg" alt="profile">
+                    <img class="colleague-profile" src=" ./img/szilvi_profil.jpg" alt="profile">
 
                     <i class="fa-solid fa-angle-right colleague-arrow arrow-right"></i>
 
                     <div class="colleague-text show">
-                        <p class="description">
-                            Imádok kozmetikusként dolgozni, mert gyönyörködtet a változatosság, amellyel nap, mint nap
-                            találkozom. Nincs két
-                            egyforma arc, és nincs két ugyanolyan szépség! Ajándék, hogy munkámmal hozzájárulhatok
-                            ahhoz,
-                            hogy mégis mindegyik
-                            teljes fényében ragyogjon.
-                            A legjobb nem elég, nekem a tökéletes kell, ahogy vendégként neked is. 10 év szakmai
-                            tapasztalatom alapján választottam
-                            ki azokat a termékcsaládokat, elektrokozmetikai gépeket, fejlesztettem ki különböző
-                            speciális
-                            eljárásokat, melyekkel
-                            eredményesen tudjuk kezelni azokat a kozmetikai igényeket, amelyekkel hozzám érkezel. Az
-                            eredményesség érdekében
-                            rendkívül fontosnak tartom a tudatos hozzáállást. Elengedhetetlen, hogy ne csak a külső, de
-                            a
-                            belső okokat is
-                            megfigyeljük!
-                        </p>
-                        <p class="highlight">
-                            A Skinist Szépségszalonban számunkra a maximum nem opció, kötelesség!
-                        </p>
-                    </div>
-                    <div class="colleague-text">
                         <p class="description">
                             Imádok kozmetikusként dolgozni, mert gyönyörködtet a változatosság, amellyel nap, mint nap
                             találkozom. Nincs két
@@ -481,9 +448,8 @@
                     <h3>
                         NYITVATARTÁS BEJELENTKEZÉS ALAPJÁN
                     </h3>
-                    <div class="gmap_canvas"><iframe
-                            src="https://maps.google.com/maps?q=scinist&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-                            frameborder="0" scrolling="yes"></iframe>
+                    <div class="gmap_canvas">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2693.743652592433!2d19.035745576932523!3d47.53385357118318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741d99a26aa5bbd%3A0xc551a7c8ef04035f!2sSkinist%20Kozmetika!5e0!3m2!1shu!2shu!4v1714551712662!5m2!1shu!2shu" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
 
                 </div>

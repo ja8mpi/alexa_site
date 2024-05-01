@@ -22,6 +22,9 @@
     --clr-gray-100: #797979;
     --clr-gray: #363636;
     --gray-line: #d9d9d9;
+    --clr-green: #2E6058;
+    --clr-green-light: #31635B;
+    --clr-yellow: #D7CA98;
     color: var(--clr-gray);
 }
 
@@ -181,7 +184,7 @@ nav ul {
 
 .news-header {
     width: 80%;
-    border: 5px solid black;
+    border: 3px solid black;
     font-size: 1rem;
     padding-bottom: 30px;
 }
@@ -204,7 +207,7 @@ nav ul {
 .news-season::after {
     content: "";
     position: absolute;
-    height: 5px;
+    height: 3px;
     max-width: 100%;
     bottom: 0;
     left: 0;
@@ -274,7 +277,11 @@ nav ul {
     bottom: 0;
     transform: translate(-50%, 50%);
     border: none;
-    background-color: var(--clr-brown-400);
+    /* background-color: var(--clr-brown-400); */
+    background-color: var(--clr-yellow);
+    color: var(--clr-white);
+    font-weight: bold;
+    font-size: large;
     padding: 10px 20px;
     border-radius: 10px;
 }
@@ -290,8 +297,11 @@ nav ul {
 .subtitle {
     text-align: center;
     font-size: 30px;
-    color: var(--clr-brown-700);
-    text-shadow: 0px 4px 4px rgba(120, 120, 120, 0.6);
+    /* color: var(--clr-brown-700); */
+    color: var(--clr-green);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    /* text-shadow: 0px 4px 4px rgba(120, 120, 120, 0.6); */
 }
 
 .subtitle.dark {
@@ -361,7 +371,7 @@ nav ul {
     color: var(--clr-white);
     font-size: 42px;
     padding: 1rem;
-    font-family: 'Niconne', cursive;
+    font-family: 'Roboto';
 }
 
 .colleague-title {
@@ -638,7 +648,7 @@ footer p {
     display: none;
 }
 
-/*dekstop overrides*/
+/*desktop overrides*/
 @media screen and (min-width: 800px) {
 
     .dropdown {
@@ -705,6 +715,9 @@ footer p {
             ". . image image image . . . ."
             ". . . . .  . . . ."
         ;
+    }
+    .colleague-profile {
+        max-width: 50%;
     }
 
     .colleague-arrow {
