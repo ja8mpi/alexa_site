@@ -59,7 +59,7 @@ dropdownItems.forEach(item => {
       top: document.querySelector('.services').getBoundingClientRect().top + window.scrollY - header.clientHeight,
       behavior: 'smooth'
     })
-    changeAndToggle([serviceImages, serviceDescriptions, serviceButtons], serviceIndex, (val) => {
+    changeAndToggle([serviceImages, serviceDescriptions, serviceButtons, priceButtons, priceCards], serviceIndex, (val) => {
       serviceIndex = Number(item.dataset.indexNumber);
       val.index = Number(item.dataset.indexNumber);
     })
@@ -176,7 +176,7 @@ updateSeason();
 
 
 colleagueArrowLeft.addEventListener('click', (e) => {
-  changeAndToggle([colleagueImages, colleagueDetails, colleagueTexts], colleagueIndex, (val) => {
+  changeAndToggle([colleagueImages, colleagueDetails, colleagueTexts, priceButtons, priceCards], colleagueIndex, (val) => {
     if (colleagueIndex == 0) {
       colleagueIndex = colleagueImages.length - 1;
       val.index = colleagueImages.length - 1;
@@ -190,7 +190,7 @@ colleagueArrowLeft.addEventListener('click', (e) => {
 
 colleagueArrowRight.addEventListener('click', (e) => {
 
-  changeAndToggle([colleagueImages, colleagueDetails, colleagueTexts], colleagueIndex, (val) => {
+  changeAndToggle([colleagueImages, colleagueDetails, colleagueTexts, priceButtons, priceButtons], colleagueIndex, (val) => {
     if (colleagueIndex >= colleagueImages.length - 1) {
       colleagueIndex = 0;
       val.index = 0;
@@ -244,7 +244,7 @@ serviceCardSliders.forEach(slider => {
       top: document.querySelector('.services').getBoundingClientRect().top + window.scrollY,
       behavior: 'smooth'
     })
-    changeAndToggle([serviceImages, serviceDescriptions, serviceButtons], serviceIndex, (val) => {
+    changeAndToggle([serviceImages, serviceDescriptions, serviceButtons, priceButtons, priceCards], serviceIndex, (val) => {
       serviceIndex = Number(slider.dataset.indexNumber);
       val.index = Number(slider.dataset.indexNumber);
     })
