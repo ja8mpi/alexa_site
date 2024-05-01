@@ -21,13 +21,41 @@ const serviceDescriptions = document.querySelectorAll('.service-description');
 const serviceButtons = document.querySelectorAll('.btn-service')
 const serviceCardSliders = document.querySelectorAll('.card-slider .card');
 const navItems = document.querySelectorAll('.nav-item');
+const navList = document.querySelector('.nav-list');
+const toggleBtn = document.querySelector('.menu-icon');
+const header = document.querySelector('header');
 
 const dropdownItems = document.querySelectorAll('.dropdown-item');
+const dropdownToggle = document.querySelector('.dropdown-toggle');  
+const dropdownContent = document.querySelector('.dropdown-content');
+
+document.addEventListener('click', (e) => {
+  e.preventDefault();
+  if(dropdownContent.classList.contains('show') && e.target !== dropdownContent && e.target !== dropdownToggle){
+    dropdownContent.classList.remove('show');
+  }
+  if(e.target.classList.contains('dropdown')){
+
+  }else{
+    if(navList.classList.contains('show') && e.target !== navList && e.target !== toggleBtn){
+      navList.classList.remove('show');
+    }
+  }
+})
+
+dropdownToggle.addEventListener('click', (e) => {
+  dropdownContent.classList.toggle('show');
+});
+
+// dropdownToggle,addEventListener('mouseover', (e) => {
+//   dropdownContent.classList.toggle('show');
+// })
+
 
 dropdownItems.forEach(item => {
   item.addEventListener('click', (e) => {
     window.scroll({
-      top: document.querySelector('.services').getBoundingClientRect().top + window.scrollY,
+      top: document.querySelector('.services').getBoundingClientRect().top + window.scrollY - header.clientHeight,
       behavior: 'smooth'
     })
     changeAndToggle([serviceImages, serviceDescriptions, serviceButtons], serviceIndex, (val) => {
@@ -37,13 +65,24 @@ dropdownItems.forEach(item => {
   });
 })
 
+// toggle menu
+
+toggleBtn.addEventListener('click', (e) => {
+  navList.classList.toggle('show');
+})
+
 //nav items
 navItems.forEach(item =>
   item.addEventListener('click', (e) => {
-    window.scroll({
-      top: document.querySelector(`.${item.dataset.target}`).getBoundingClientRect().top + window.scrollY,
-      behavior: 'smooth'
-    })
+    if(item.classList.contains("dropdown")){
+
+    }else{
+      navList.classList.remove('show');
+      window.scroll({
+        top: document.querySelector(`.${item.dataset.target}`).getBoundingClientRect().top + window.scrollY -header.offsetHeight,
+        behavior: 'smooth'
+      })
+    }
   })
 )
 
