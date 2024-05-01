@@ -1,3 +1,4 @@
+
 const seasonContainer = document.querySelector(".news-season");
 const newsText = document.querySelector(".news-text");
 const cardSlider = document.querySelector(".card-slider");
@@ -35,7 +36,7 @@ const dropdownToggle = document.querySelector('.dropdown-toggle');
 const dropdownContent = document.querySelector('.dropdown-content');
 
 document.addEventListener('click', (e) => {
-  e.preventDefault();
+  // e.preventDefault();
   if(dropdownContent.classList.contains('show') && e.target !== dropdownContent && e.target !== dropdownToggle){
     dropdownContent.classList.remove('show');
   }
