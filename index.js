@@ -25,6 +25,11 @@ const navList = document.querySelector('.nav-list');
 const toggleBtn = document.querySelector('.menu-icon');
 const header = document.querySelector('header');
 
+// Price elements
+const priceButtons = document.querySelectorAll('.btn-price');
+const priceCards = document.querySelectorAll('.price-description');
+
+// Dropdown elements
 const dropdownItems = document.querySelectorAll('.dropdown-item');
 const dropdownToggle = document.querySelector('.dropdown-toggle');  
 const dropdownContent = document.querySelector('.dropdown-content');
@@ -46,10 +51,6 @@ document.addEventListener('click', (e) => {
 dropdownToggle.addEventListener('click', (e) => {
   dropdownContent.classList.toggle('show');
 });
-
-// dropdownToggle,addEventListener('mouseover', (e) => {
-//   dropdownContent.classList.toggle('show');
-// })
 
 
 dropdownItems.forEach(item => {
@@ -254,7 +255,16 @@ serviceCardSliders.forEach(slider => {
 
 serviceButtons.forEach(button => {
   button.addEventListener('click', e => {
-    changeAndToggle([serviceImages, serviceDescriptions, serviceButtons], serviceIndex, (val) => {
+    changeAndToggle([serviceImages, serviceDescriptions, serviceButtons, priceButtons, priceCards], serviceIndex, (val) => {
+      serviceIndex = Number(button.dataset.indexNumber);
+      val.index = Number(button.dataset.indexNumber);
+    })
+  });
+})
+
+priceButtons.forEach(button => {
+  button.addEventListener('click', e => {
+      changeAndToggle([serviceImages, serviceDescriptions, serviceButtons, priceButtons, priceCards], serviceIndex, (val) => {
       serviceIndex = Number(button.dataset.indexNumber);
       val.index = Number(button.dataset.indexNumber);
     })
